@@ -37,7 +37,6 @@ def main():
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
     kk_rct = kk_img.get_rect()
     kk_rct.center = (900,400)
-    
     """ばくだん"""
     bomb = pg.Surface((20,20))
     pg.draw.circle(bomb, (255, 0, 0), (10, 10), 10)
@@ -46,9 +45,9 @@ def main():
     x,y = random.randint(0,WIDTH),random.randint(0,HEIGHT)
     bd_rct.center = x,y
     vx,vy = +5, +5
-    
     clock = pg.time.Clock()
     tmr = 0
+    
     
     while True:
         for event in pg.event.get():
@@ -72,7 +71,6 @@ def main():
         if check_bound(kk_rct) != (True,True):
             kk_rct.move_ip(-sum_mv[0],-sum_mv[1])
         screen.blit(kk_img,kk_rct)
-        
         """ばくだん"""
         bd_rct.move_ip(vx,vy)
         yoko, tate =check_bound(bd_rct)
