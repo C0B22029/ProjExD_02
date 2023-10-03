@@ -55,6 +55,8 @@ def main():
             if event.type == pg.QUIT: 
                 return
         
+        if kk_rct.colliderect(bd_rct):
+            return
             
         screen.blit(bg_img, [0, 0])
         # screen.blit(kk_img, [900, 400])
