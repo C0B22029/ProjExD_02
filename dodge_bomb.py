@@ -20,6 +20,7 @@ def main():
     bd_rct = bomb.get_rect()
     x,y = random.randint(0,WIDTH),random.randint(0,HEIGHT)
     bd_rct.center = x,y
+    vx,vy = +5, +5
     
     while True:
         for event in pg.event.get():
@@ -28,10 +29,13 @@ def main():
 
         screen.blit(bg_img, [0, 0])
         screen.blit(kk_img, [900, 400])
+        bd_rct.move_ip(vx,vy)
         screen.blit(bomb,bd_rct)
         pg.display.update()
         tmr += 1
-        clock.tick(10)
+        clock.tick(50)
+        
+        """bomb"""
 
 
 if __name__ == "__main__":
